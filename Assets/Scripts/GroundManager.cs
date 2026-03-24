@@ -13,7 +13,7 @@ public class GroundManager : MonoBehaviour
     {
         Instantiate(Ground, OriginPoint.transform.position, Quaternion.identity);
     }
-    private void Start()
+    private void Update()
     {
         SpawnGround(Ground, spawnPoint);
     }
