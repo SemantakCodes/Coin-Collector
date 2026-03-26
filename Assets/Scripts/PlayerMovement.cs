@@ -1,16 +1,37 @@
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float playerSpeed;
+    private Rigidbody rb;
+
+    private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        Move();
+    }
+    private void Move()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(Vector3.forward * playerSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(Vector3.back * playerSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        }
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.collider.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

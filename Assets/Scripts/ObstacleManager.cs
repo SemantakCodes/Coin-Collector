@@ -21,9 +21,9 @@ public class ObstacleManager : MonoBehaviour
     private void SpawnObstacle()
     {
         timer += Time.deltaTime;
-        ranPos = Random.Range(3,-7);
         if(timer >= timerDelay)
         {
+            ranPos = Random.Range(3,-7);
             newSpawnPoint.x = spawnPoint.transform.position.x;
             newSpawnPoint.y = spawnPoint.transform.position.y;
             newSpawnPoint.z = ranPos;
