@@ -1,6 +1,5 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GroundManager : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class GroundManager : MonoBehaviour
     [SerializeField] private Transform Player;
     [SerializeField] private GameObject Ground;
     [SerializeField] private float groundOnScreen;
+
     private float timer;
     [SerializeField] private float timeDelay;
     private float groundLength;
@@ -27,10 +27,8 @@ public class GroundManager : MonoBehaviour
         SpawnGround(Ground, spawnPoint);
 
     }
-    private void Start()
-    {
-        
-    }
+    
+    
 
     
 }

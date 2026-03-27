@@ -1,20 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private string restartMenu;
     
     private void Update()
     {
-        player.GetComponent<PlayerMovement>().enabled = true;
-        if(player.transform.position.z > 5.15)
-        {
-            player.GetComponent<PlayerMovement>().enabled = false;
-        }
-        if(player.transform.position.z > -5.15)
-        {
-            player.GetComponent<PlayerMovement>().enabled = false;
-        }
+        
 
+        if(player.IsDestroyed() == true)
+        {
+            SceneManager.LoadScene(restartMenu);
+        }
     }
 }

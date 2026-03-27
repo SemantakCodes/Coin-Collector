@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7473643874330819433, guid: 92681291b5d10f942b9f2730f64e90d7, type: 3}
       propertyPath: GroundSpeed
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 842331596266814225, guid: 92681291b5d10f942b9f2730f64e90d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -727,6 +727,7 @@ GameObject:
   - component: {fileID: 821864231}
   - component: {fileID: 821864230}
   - component: {fileID: 821864232}
+  - component: {fileID: 821864233}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -784,6 +785,20 @@ MonoBehaviour:
   ranPos: 0
   Obstacle: {fileID: 8546684955233563174, guid: 7540164d0ef3dd44fbb92094daaacea9, type: 3}
   timerDelay: 0.9
+--- !u!114 &821864233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821864229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b84d95144e3cc488e262c2dcbc6874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  player: {fileID: 914861200}
+  restartMenu: RestartMenu
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
